@@ -48,7 +48,6 @@ def detect_movements(x, f, f1=2., f2=10., th0=125., thf1=2.5, order=2,
         `1d array`: movement signal containing values greater 0 where
         movements were detected
     """
-
     xfilt = filter_bandpass(x, f, cutoff1=f1, cutoff2=f2, order=order)
     xstd = pd.Series(xfilt).rolling(int(f*stdwin), center=True, min_periods=1
                                     ).std()
@@ -69,3 +68,5 @@ def detect_movements(x, f, f1=2., f2=10., th0=125., thf1=2.5, order=2,
     return pd.Series(movement_signal).rolling(int(2*f*margin), center=True,
                                               min_periods=1
                                               ).max().values
+
+    print(movement_signal)
