@@ -5,7 +5,7 @@ import pandas as pd
 from .common import filter_bandpass
 
 
-def detect_movements(x, f, f1=2., f2=10., th0=125., thf1=2.5, order=2,
+def detect_movements(x, f, f1=2., f2=10., th0=1500., thf1=2.5, order=2,
                      percentile=90, stdwin=2., th2=3., margin=1.):
     """Detect movements in raw BCG signal by simple applying simple
     thresholds

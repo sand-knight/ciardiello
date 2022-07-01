@@ -35,7 +35,7 @@ def heartrate_from_indices(indices, f, max_std_seconds=float("inf"),
 
 
 def get_heartrate_pipe(segmenter, max_std_seconds=float("inf"), min_num_peaks=2,
-                       use_median=False, index=None):
+                       use_median=False, index='IJK'):
     """build function that estimates heart rate from detected peaks in
     input signal
 
@@ -71,7 +71,7 @@ def get_heartrate_pipe(segmenter, max_std_seconds=float("inf"), min_num_peaks=2,
     return pipe
 
 
-def get_heartrate_score_pipe(segmenter, use_median=False, index=None):
+def get_heartrate_score_pipe(segmenter, use_median=False, index='IJK'):
     """build function that estimates heart rate from detected peaks in
     input signal and return both heart rate and stddev of peak distances
 
