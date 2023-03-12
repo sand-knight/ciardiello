@@ -1,8 +1,7 @@
 import os
 
 import numpy as np
-from sklearn.model_selection import GroupKFold, LeaveOneGroupOut
-import tensorflow as tf
+#from sklearn.model_selection import GroupKFold, LeaveOneGroupOut
 
 
 def get_group_splitter(n_splits, groups):
@@ -37,6 +36,7 @@ def get_model_from_json(modelpath, filename="model.json"):
         `keras model`: uninitialized keras model
     """
 
+    import tensorflow as tf
     with open(os.path.join(modelpath, filename), "r") as fp:
         model_json = fp.read()
     return tf.keras.models.model_from_json(model_json)
